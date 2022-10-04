@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+</head>
+<body>
+    <h1>Random Number Picker</h1>
+    <h3> You can pick random number here.</h3> <br>
+    
+        <label for="integer">Fill <strong> Minimum </strong> Number: </label>
+        <input type="number" id="min" value="0"> <br> <br>
+
+        <label for="integer">Fill <strong>Maximum </strong>  Number: </label>
+        <input type="number" id="max" value="0"> <br> <br>
+
+        <button id="generate">Generate</button>
+       
+
+    <br><br>
+        <label>Result: </label>  <span id="result">0</span>
+
+
+    <script>
+        let generateBtn = document.getElementById("generate");
+       
+
+        function randomNum(){
+            let min = document.getElementById("min");
+            let max = document.getElementById ("max");
+
+            let minValue = Number(min.value);
+            let maxValue = Number(max.value);
+
+            let num = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+
+            document.getElementById("result").innerText = num;
+        }
+
+        generateBtn.addEventListener("click", randomNum);
+    </script>
+</body>
+</html>
